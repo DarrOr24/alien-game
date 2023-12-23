@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Game</title>
+    <link rel="stylesheet" href="css/space-invader.css">
+</head>
+
+<body class="barbie-style" onload="init()" onkeydown="onKeyDown(event)">
+    
+    
+    <div>
+        <span class="top"> SCORE: <span class="top score-count">0</span></span>
+        <span class="top"> LIFE: <span class="top life-count"> ♆ ♆ ♆ </span></span>
+        <span class="top"> SHIELDS: <span class="top shield-count"> 🛡️🛡️🛡️ </span></span>
+        <br>
+        <span class="top"> SUPER: <span class="super-attacks">3</span></span>
+        <span class="top"> ⏲️  <span class="super-attacks-timer"> 3.00 </span>sec ⏲️</span>
+        <span class="top"> FAST LASERS: <span class="super-mode"> 3 </span></span>
+
+    </div>
+
+    <button onclick="levelSelect(this, 24)" class="button level-buttons easy">BORING 🥱</button>
+    <button onclick="levelSelect(this, 32)" class="button level-buttons normal">BETTER 💪</button>
+    <button onclick="levelSelect(this, 40)" class="button level-buttons hard">GURU 🧘‍♀️</button>
+    
+    <table class="board-container">
+        <tbody class="board"></tbody>
+    </table>
+
+    
+    <div class="game-over">
+        <h2 class="victory hide">YAY!!!! YOU WON!!!</h2>
+        <h2 class="loss hide"> 😒 Gotta try harder...better luck next time</h2>
+    </div>
+
+   <button onclick = "reset(this)" class = "button reset-button hide">Reset</button> 
+   <button onclick = "start(this)" class = "button start-button">Start</button>
+   <button onclick="showKeyMap(this)" class="button key-map-btn">Key Map</button>
+   <button onclick="customizeSettings(this)" class="button settings-btn">Settings</button>
+   
+   <div class="key-map hide"> </div> 
+
+
+    <div class="settings hide">
+        THEME ⛱️:    
+        <button class="button settings-btn theme-btns" onClick="chooseTheme(this, 'default')">Default 😊</button>
+        <button class="button settings-btn theme-btns" onClick="chooseTheme(this, 'barbie')">👠Barbie🌸 </button>
+        <button class="button settings-btn theme-btns" onClick="chooseTheme(this, 'retro')" >📺Retro🎞️</button>
+        <br>
+        HERO 🦸🏽‍♀️:    
+        <button class="button settings-btn hero-btns" onClick="chooseHero(this, '🦸🏽‍♀️')">🦸🏽‍♀️</button>
+        <button class="button settings-btn hero-btns" onClick="chooseHero(this, '♆')">♆</button>
+        <button class="button settings-btn hero-btns" onClick="chooseHero(this, '😎')">😎</button>
+        <br>
+        PROTECTION 🪬:    
+        <button class="button settings-btn bunker-btns" onClick="chooseProtection(this, 0)">NONE 🤰🏽</button>
+        <button class="button settings-btn bunker-btns" onClick="chooseProtection(this, 2)">2 BUNKERS</button>
+        <button class="button settings-btn bunker-btns" onClick="chooseProtection(this, 3)">3 BUNKERS</button>
+        
+    </div>
+  
+
+  
+    
+    
+    
+    <script src="js/settings.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/alien.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/candy.js"></script>
+    <script src="js/extreme-bonus.js"></script>
+    <script src="js/game.js"></script>
+    
+</body>
+</html>
